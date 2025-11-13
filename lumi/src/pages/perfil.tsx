@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import DashboardBox from "../components/dashboardbox";
 
 export default function Perfil() {
   return (
@@ -7,14 +8,8 @@ export default function Perfil() {
       <Navbar />
 
       <main className="flex flex-col items-center py-16 px-6">
-
-        <div className="bg-[#FFFDEB] shadow-lg rounded-2xl w-full max-w-4xl">
-
-          <div className="bg-[#B3E099] text-gray-900 text-lg font-semibold rounded-t-2xl px-6 py-3 -mt-8 mb-8 shadow">
-            Dashboard
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-start gap-10 p-10">
+        <DashboardBox>
+          <div className="flex flex-col md:flex-row justify-between items-start gap-10">
             {/* Coluna esquerda */}
             <div className="flex flex-col items-center md:items-start w-full md:w-1/3 text-center md:text-left">
               <div className="flex flex-col items-center mb-4">
@@ -77,7 +72,8 @@ export default function Perfil() {
             </div>
           </div>
 
-          <div className="mt-12 p-10">
+          {/* Chat */}
+          <div className="mt-12">
             <h2 className="text-lg font-semibold mb-4">Converse com LUM.IA</h2>
 
             <div className="bg-white rounded-xl shadow-md">
@@ -90,7 +86,7 @@ export default function Perfil() {
               </div>
             </div>
           </div>
-        </div>
+        </DashboardBox>
       </main>
 
       <Footer />

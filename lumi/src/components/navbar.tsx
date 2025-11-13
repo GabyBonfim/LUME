@@ -10,14 +10,14 @@ export default function Navbar() {
         <Link to="/" className="hover:text-gray-600 transition-colors">
           Homepage
         </Link>
-        <Link to="/progress" className="hover:text-gray-600 transition-colors">
-          Progress
-        </Link>
-        <Link to="/analise" className="hover:text-gray-600 transition-colors">
+        <Link to="/perfilAdm" className="hover:text-gray-600 transition-colors">
           Análise de perfil
         </Link>
         <Link to="/perfil" className="hover:text-gray-600 transition-colors">
           Perfil
+        </Link>
+        <Link to="/login" className="hover:text-gray-600 transition-colors">
+          Login
         </Link>
       </div>
 
