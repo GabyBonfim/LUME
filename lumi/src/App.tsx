@@ -8,8 +8,8 @@ import Login from "./pages/login";
 function App() {
   return (
     <Routes>
-      <Route path="/homepage" element={<Home />} />
-      <Route path="/" element={<Login/>} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login/>} />
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/perfilAdm" element={<PerfilAdm />} />
     </Routes>

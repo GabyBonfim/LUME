@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import DashboardBox from "../components/dashboardbox";
+import ChatLumIA from "../components/ChatLumIA";
 
 export default function Perfil() {
   return (
@@ -82,7 +83,7 @@ export default function Perfil() {
               </div>
 
               <div className="p-6 text-gray-500 text-center italic">
-                Espaço reservado para o chat do IBM Watson
+                <ChatLumIA />
               </div>
             </div>
           </div>
