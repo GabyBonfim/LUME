@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 export default function Sobre() {
   const equipe = [
@@ -35,7 +36,6 @@ export default function Sobre() {
           clareza, propósito e tecnologia.
         </p>
       </section>
-
 
       <section className="py-16 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-10">
@@ -77,6 +77,14 @@ export default function Sobre() {
           ))}
         </div>
       </section>
+
+        <section className="text-center py-16 px-6 bg-[#bed084] mb-20">
+        <p className="text-3xl font-bold mb-4">"O sucesso é a soma dos pequenos esforços repetidos dia após dia."</p>
+        <p className="max-w-3xl mx-auto text-lg opacity-90">
+          - Funders, LUME | Gabriely Bonfim, Henrique Vespasiano & Mirelly Sousa.
+        </p>
+      </section>
+      <Footer />
     </div>
   );
 }
