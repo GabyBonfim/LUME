@@ -16,6 +16,9 @@ export default function Navbar() {
         <Link to="/perfil" className="hover:text-gray-600 transition-colors">
           Perfil
         </Link>
+          <Link to="/sobre" className="hover:text-gray-600 transition-colors">
+          Sobre Nós
+        </Link>
         <Link to="/login" className="hover:text-gray-600 transition-colors">
           Login
         </Link>

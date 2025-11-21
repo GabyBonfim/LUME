@@ -56,7 +56,7 @@ export default function Home() {
       <Navbar />
 
       {/* SEÇÃO 1 */}
-<section className="flex flex-col md:flex-row items-center justify-between gap- px-8 md:px-60 py-45 bg-[#B3E099]">
+<section className="flex flex-col md:flex-row items-center justify-between gap- px-8 md:px-60 py-45 bg-black">
 
   <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2">
     <img
@@ -67,11 +67,11 @@ export default function Home() {
   </div>
 
   <div className="flex flex-col w-full md:w-1/2 items-center md:items-start text-center md:text-left">
-    <h2 className="text-xl font-semibold mb-4">
+    <h2 className="text-xl font-semibold mb-4 text-white">
       Aqui você descobre os novos talentos da sua empresa.
     </h2>
 
-    <p className="text-gray-700 leading-relaxed mb-6">
+    <p className="text-white leading-relaxed mb-6">
       A LUME foi criada com o objetivo de descobrir e aprimorar
       <strong> soft skills</strong>, podendo gerar análises sobre cada
       colaborador, a fim de entender qual pode ser o papel de contribuidor
