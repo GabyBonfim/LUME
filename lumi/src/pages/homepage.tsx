@@ -163,6 +163,15 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="text-center py-16 px-6 bg-[#bed084] mt">
+        <p className="text-3xl font-bold mb-4">PLANO BUSINESS</p>
+        <p className="max-w-3xl mx-auto text-lg opacity-90">
+          O plano ideal para empresas de médio porte, com até 70 colaboradores.
+          Aqui, é cobrado apenas R$79,00 reais por colaborador. 
+        </p>
+
+      </section>
+
       <Footer />
     </div>
   );

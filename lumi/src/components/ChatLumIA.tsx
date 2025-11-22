@@ -1,14 +1,17 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function ChatLumIA() {
   const [mensagem, setMensagem] = useState("");
-  const [historico, setHistorico] = useState<{ autor: string; texto: string }[]>([]);
+  const [historico, setHistorico] = useState<
+    { autor: string; texto: string }[]
+  >([]);
   const [digitando, setDigitando] = useState(false);
 
   async function enviar() {
     if (!mensagem.trim()) return;
 
-    // Adiciona mensagem do usuário
+    // Mensagem do usuário
     const novaMsg = { autor: "usuario", texto: mensagem };
     setHistorico((prev) => [...prev, novaMsg]);
 
@@ -16,7 +19,6 @@ export default function ChatLumIA() {
     setDigitando(true);
 
     try {
-      // Chamada ao BACKEND
       const resposta = await fetch("http://localhost:8080/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -24,11 +26,13 @@ export default function ChatLumIA() {
       });
 
       const data = await resposta.json();
-
       setDigitando(false);
 
-      // Adiciona resposta da IA
-      setHistorico((prev) => [...prev, { autor: "lumia", texto: data.resposta }]);
+      // Resposta da IA
+      setHistorico((prev) => [
+        ...prev,
+        { autor: "lumia", texto: data.resposta },
+      ]);
     } catch (e) {
       setDigitando(false);
       setHistorico((prev) => [
@@ -45,17 +49,23 @@ export default function ChatLumIA() {
         Chat com LUM.IA
       </div>
 
-      <div className="p-4 h-80 overflow-y-auto flex flex-col space-y-2">
+      {/* LISTA DE MENSAGENS */}
+      <div className="p-4 h-80 overflow-y-auto flex flex-col space-y-3">
+
         {historico.map((msg, index) => (
           <div
             key={index}
-            className={`p-2 max-w-[80%] rounded-lg ${
-              msg.autor === "usuario"
-                ? "bg-[#DCF7C5] self-end ml-auto text-right"
-                : "bg-[#B3E099] text-left"
-            }`}
+            className={`p-3 max-w-[85%] rounded-xl shadow-sm leading-relaxed prose prose-sm
+              ${msg.autor === "usuario"
+                ? "bg-[#DCF7C5] self-end ml-auto text-right prose-p:m-0"
+                : "bg-[#B3E099] text-left prose-p:m-0"
+              }`}
           >
-            {msg.texto}
+            {msg.autor === "lumia" ? (
+              <ReactMarkdown>{msg.texto}</ReactMarkdown>
+            ) : (
+              <span>{msg.texto}</span>
+            )}
           </div>
         ))}
 
@@ -66,6 +76,7 @@ export default function ChatLumIA() {
         )}
       </div>
 
+      {/* INPUT */}
       <div className="flex gap-2 p-2">
         <input
           className="flex-1 border rounded-lg p-2"
@@ -80,7 +91,6 @@ export default function ChatLumIA() {
           Enviar
         </button>
       </div>
-
     </div>
   );
 }

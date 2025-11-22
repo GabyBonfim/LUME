@@ -11,13 +11,15 @@ export default function Login() {
   const validarLogin = () => {
     // ADM
     if (email === "adm@lume.com" && senha === "1234") {
-      navigate("/homepage");
+      localStorage.setItem("tipoUsuario", "adm");
+      navigate("/perfilAdm");  // 🔥 ROTA CORRETA QUE EXISTE
       return;
     }
 
     // COLABORADOR
     if (email === "colab@lume.com" && senha === "1234") {
-      navigate("/homepage");
+      localStorage.setItem("tipoUsuario", "colaborador");
+      navigate("/perfil");  // 🔥 ROTA CORRETA QUE EXISTE
       return;
     }
 
@@ -46,13 +48,12 @@ export default function Login() {
         © {new Date().getFullYear()} LUME — caminhos inteligentes guiados pela mente e dados.
       </p>
 
-      {/* 🌙 POPUP LOGIN */}
+      {/* POPUP */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           
           <div className="bg-[#FFFDEB] rounded-2xl p-10 w-96 shadow-xl relative">
 
-            {/* Botão fechar */}
             <button
               onClick={() => setShowPopup(false)}
               className="absolute top-3 right-4 text-gray-600 hover:text-black text-xl font-bold"
