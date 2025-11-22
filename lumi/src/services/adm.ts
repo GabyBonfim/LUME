@@ -1,4 +1,4 @@
-const API = "http://localhost:8080";
+const API = "https://lume-backend-34oq.onrender.com";
 
 // =============================================
 // 📌 LISTAR COLABORADORES
